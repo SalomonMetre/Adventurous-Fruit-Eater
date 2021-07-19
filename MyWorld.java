@@ -11,6 +11,7 @@ public class MyWorld extends World
     static int width=1000,height=600;
     static int numberCars=15;
     static int numberFruits=5;
+    static int nbCarsShot;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -24,5 +25,10 @@ public class MyWorld extends World
         for(int i=0;i<numberFruits;i++)
             addObject(new Fruit(),20+Greenfoot.getRandomNumber(MyWorld.width-40),Greenfoot.getRandomNumber(MyWorld.height-20));
         addObject(new Eater(),MyWorld.width/2,MyWorld.height-20);
+        nbCarsShot=0;
+    }
+    
+    public void displayScore(){
+        this.showText("Score : "+Eater.score,width/10,30);
     }
 }

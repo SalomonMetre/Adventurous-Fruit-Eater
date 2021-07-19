@@ -13,7 +13,13 @@ public class Eater extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     static int moveDistance=3;
+    static int score;
     int limitBombs=100;
+    
+    Eater(){
+        score=0;
+    }
+    
     public void moveEater(){
         if(Greenfoot.isKeyDown("up")){
             setLocation(getX(),getY()-moveDistance);
@@ -55,6 +61,9 @@ public class Eater extends Actor
         if(fruit!=null){
             getWorld().addObject(new Fruit(),Greenfoot.getRandomNumber(MyWorld.width),Greenfoot.getRandomNumber(MyWorld.height-20));
             getWorld().removeObject(fruit);
+            score+=5;
         }
     }
+    
+    
 }

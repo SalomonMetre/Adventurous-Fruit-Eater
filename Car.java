@@ -42,6 +42,8 @@ public class Car extends Actor
         Actor eaterTouched=getOneObjectAtOffset(0,0,Eater.class);
         if(eaterTouched!=null){
             getWorld().removeObject(eaterTouched);
+            MyWorld myWorld=(MyWorld)getWorld();
+            myWorld.displayScore();
         }
     }
 
