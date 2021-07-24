@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     static int width=1000,height=600;
-    static int numberCars=15;
+    static int numberCars=10;
     static int numberFruits=5;
     static int nbCarsShot;
     /**
