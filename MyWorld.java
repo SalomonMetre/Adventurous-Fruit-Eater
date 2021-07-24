@@ -32,6 +32,7 @@ public class MyWorld extends World
         this.showText("Score : "+Eater.score,50,30);
         this.showText("Level : "+Eater.level,300,30);
         this.showText("Lives : "+Eater.lives,550,30);
+        this.showText("High Score : "+Eater.highScore,800,30);
     }
     
     public void regenerateCars(){

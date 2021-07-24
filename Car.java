@@ -50,6 +50,9 @@ public class Car extends Actor
                 Greenfoot.setWorld(new MyWorld());
                 Eater.lives=10;
                 Eater.level=0;
+                if(Eater.score>Eater.highScore)
+                    Eater.highScore=Eater.score;
+                Eater.score=0;
             }
         }
     }

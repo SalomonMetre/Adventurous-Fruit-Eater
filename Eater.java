@@ -18,10 +18,9 @@ public class Eater extends Actor
     static int level=0;
     static int eatenFruits=0;
     static int lives=10;
+    static int highScore=0;
     
-    Eater(){
-        score=0;
-    }
+    Eater(){}
     
     public void moveEater(){
         if(Greenfoot.isKeyDown("up")){
