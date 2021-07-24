@@ -28,7 +28,22 @@ public class MyWorld extends World
         nbCarsShot=0;
     }
     
-    public void displayScore(){
-        this.showText("Score : "+Eater.score,width/10,30);
+    public void displayDetails(){
+        this.showText("Score : "+Eater.score,50,30);
+        this.showText("Level : "+Eater.level,300,30);
+        this.showText("Lives : "+Eater.lives,550,30);
+    }
+    
+    public void regenerateCars(){
+        if(nbCarsShot>=5){
+            for(int i=0;i<MyWorld.nbCarsShot;i++)
+                    addObject(new Car(),20+Greenfoot.getRandomNumber(MyWorld.width-40),Greenfoot.getRandomNumber(MyWorld.height-20));
+            nbCarsShot=0;
+        }
+    }
+    
+    public void act(){
+        displayDetails();
+        regenerateCars();
     }
 }

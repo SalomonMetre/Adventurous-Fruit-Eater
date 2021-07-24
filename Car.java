@@ -41,9 +41,16 @@ public class Car extends Actor
     public void detectAndRemoveEater(){
         Actor eaterTouched=getOneObjectAtOffset(0,0,Eater.class);
         if(eaterTouched!=null){
-            getWorld().removeObject(eaterTouched);
-            MyWorld myWorld=(MyWorld)getWorld();
-            myWorld.displayScore();
+            if(Eater.lives>=1){
+                Eater.lives--;
+                getWorld().removeObject(eaterTouched);
+                getWorld().addObject(new Eater(),MyWorld.width/2,MyWorld.height-20);
+            }
+            if(Eater.lives==0){
+                Greenfoot.setWorld(new MyWorld());
+                Eater.lives=10;
+                Eater.level=0;
+            }
         }
     }
 

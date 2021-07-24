@@ -15,6 +15,9 @@ public class Eater extends Actor
     static int moveDistance=3;
     static int score;
     int limitBombs=100;
+    static int level=0;
+    static int eatenFruits=0;
+    static int lives=10;
     
     Eater(){
         score=0;
@@ -47,6 +50,12 @@ public class Eater extends Actor
             limitBombs-=1;
             }
         }
+        if(getX()<2 || getX()>MyWorld.width-2){
+            setLocation(MyWorld.width-getX(),getY());
+        }
+        if(getY()<2 || getY()>MyWorld.height-2){
+            setLocation(getX(),MyWorld.height-getY());
+        }
     }
     
     public void act()
@@ -54,6 +63,7 @@ public class Eater extends Actor
         // Add your action code here.
         eatFruit();
         moveEater();
+        increaseLevel();
     }
     
     public void eatFruit(){
@@ -62,6 +72,15 @@ public class Eater extends Actor
             getWorld().addObject(new Fruit(),Greenfoot.getRandomNumber(MyWorld.width),Greenfoot.getRandomNumber(MyWorld.height-20));
             getWorld().removeObject(fruit);
             score+=5;
+            eatenFruits+=1;
+        }
+    }
+    
+    public void increaseLevel(){
+        if(eatenFruits==5){
+            level++;
+            getWorld().addObject(new Car(),Greenfoot.getRandomNumber(MyWorld.width),Greenfoot.getRandomNumber(MyWorld.height-20));
+            eatenFruits=0;
         }
     }
     

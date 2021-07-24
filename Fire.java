@@ -31,13 +31,9 @@ public class Fire extends Actor
         if(carTouched!=null){
             getWorld().removeObject(carTouched);
             Eater.score+=2;
-            if(MyWorld.nbCarsShot<5)
+            if(MyWorld.nbCarsShot<5){
                 MyWorld.nbCarsShot+=1;
-            else{
-                for(int i=0;i<MyWorld.nbCarsShot;i++)
-                    getWorld().addObject(new Car(),20+Greenfoot.getRandomNumber(MyWorld.width-40),Greenfoot.getRandomNumber(MyWorld.height-20));
-                    MyWorld.nbCarsShot=0;
-                }
+            }
         }
     }
     

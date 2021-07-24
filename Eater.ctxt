@@ -9,4 +9,6 @@ comment3.params=
 comment3.target=void\ act()
 comment4.params=
 comment4.target=void\ eatFruit()
-numComments=5
+comment5.params=
+comment5.target=void\ increaseLevel()
+numComments=6
