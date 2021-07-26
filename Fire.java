@@ -29,6 +29,7 @@ public class Fire extends Actor
     public void detectAndRemoveCar(){
         Actor carTouched=getOneObjectAtOffset(0,0,Car.class);
         if(carTouched!=null){
+            MyWorld.shootSound.play();
             getWorld().removeObject(carTouched);
             Eater.score+=2;
             if(MyWorld.nbCarsShot<5){

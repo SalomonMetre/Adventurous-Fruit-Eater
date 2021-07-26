@@ -14,7 +14,7 @@ public class Eater extends Actor
      */
     static int moveDistance=3;
     static int score;
-    int limitBombs=100;
+    int limitBombs=500;
     static int level=0;
     static int eatenFruits=0;
     static int lives=10;
@@ -68,6 +68,7 @@ public class Eater extends Actor
     public void eatFruit(){
         Actor fruit=getOneObjectAtOffset(0,0,Fruit.class);
         if(fruit!=null){
+            MyWorld.eatSound.play();
             getWorld().addObject(new Fruit(),Greenfoot.getRandomNumber(MyWorld.width),Greenfoot.getRandomNumber(MyWorld.height-20));
             getWorld().removeObject(fruit);
             score+=5;
