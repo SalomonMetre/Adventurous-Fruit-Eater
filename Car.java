@@ -17,7 +17,7 @@ public class Car extends Actor
     Car(){
         image1=new GreenfootImage("images/car01.png");
         image2=new GreenfootImage("images/car03.png");
-        xSpeed=1+Greenfoot.getRandomNumber(4);
+        xSpeed=Greenfoot.getRandomNumber(5);
     }
     
     public void moveCar(){
